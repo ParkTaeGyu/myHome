@@ -1,0 +1,80 @@
+package my.board;
+
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+
+public class BoardDataBean {
+	Connection con;
+	PreparedStatement ps;
+	ResultSet rs;
+	
+	String url, user, pass;
+	
+	public BoardDataBean() {
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		}catch(ClassNotFoundException e) {
+			System.err.println("오라클 드라이버 검색 실패!!");
+		}
+		
+		url = "jdbc:oracle:thin:@localhost:1521:xe";
+		user = "jsp01";
+		pass = "jsp01";
+	}
+	
+	public List<BoardDBBean> listBoard() throws SQLException{
+		try {
+			con = DriverManager.getConnection(url, user, pass);
+			String sql = "select * from jsp_board order by num desc";
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			List<BoardDBBean> boardList = makeList(rs);
+			return boardList;
+		}finally {
+			if (rs != null) rs.close();
+			if (ps != null) ps.close();
+			if (con != null) con.close();
+		}
+	}
+	
+	protected List<BoardDBBean> makeList(ResultSet rs) throws SQLException{
+		List<BoardDBBean> list = new ArrayList<>();
+		while(rs.next()) {
+			BoardDBBean dto = new BoardDBBean();
+			dto.setNum(rs.getInt("num"));
+			dto.setWriter(rs.getString("writer"));
+			dto.setEmail(rs.getString("email"));
+			dto.setSubject(rs.getString("subject"));
+			dto.setPasswd(rs.getString("passwd"));
+			dto.setReg_date(rs.getString("reg_date"));
+			dto.setReadcount(rs.getInt("readcount"));
+			dto.setContent(rs.getString("content"));
+			dto.setIp(rs.getString("ip"));
+			list.add(dto);
+		}
+		return list;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

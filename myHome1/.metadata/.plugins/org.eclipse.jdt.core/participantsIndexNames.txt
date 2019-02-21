@@ -1,0 +1,23 @@
+INDEX VERSION 1.131
+D:\林富jsp\study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2883426637.index
+\myHome\src
+D:\林富jsp\study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\648987399.index
+\test\src
+D:\林富jsp\study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\976829027.index
+\myHome\src
+D:\林富jsp\study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1283813816.index
+\myHome\src
+D:\林富jsp\study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3362249268.index
+\myHome\src
+D:\林富jsp\study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\114535658.index
+\myHome\src
+D:\林富jsp\study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1785955664.index
+\myHome\src
+D:\林富jsp\study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3461658581.index
+\myHome\src
+D:\林富jsp\study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3257941901.index
+\book\src
+D:\林富jsp\study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1909759100.index
+\myHome\src
+D:\林富jsp\study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3887486278.index
+\myHome\src

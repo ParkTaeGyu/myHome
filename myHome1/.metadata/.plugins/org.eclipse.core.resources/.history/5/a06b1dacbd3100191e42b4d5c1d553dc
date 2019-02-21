@@ -1,0 +1,69 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR" import="my.login.*"%>
+<!-- login_ok.jsp -->
+
+<jsp:useBean id="loginOk" class="my.login.LoginOk" />
+<jsp:setProperty property="*" name="loginOk"/>
+
+<%
+		if (loginOk.getId() == null || loginOk.getId().trim().equals("")){
+			response.sendRedirect("login.jsp");
+			return;
+		}
+
+		String mode = request.getParameter("mode");
+		
+		String saveId = request.getParameter("saveId");
+		//checkbox에 check가 되어있으면 on, check가 안되어 있으면 null이 저장됨
+		
+		int res = loginOk.loginCheck();
+		String msg = null, url = null;
+		
+		switch(res){
+		case LoginOk.OK :
+			Cookie ck = new Cookie("mbId", loginOk.getId());
+			if (saveId == null){
+				ck.setMaxAge(0);
+			}else {
+				ck.setMaxAge(24*60*60);
+			}
+			response.addCookie(ck);			
+			
+			session.setAttribute("mbId", loginOk.getId());
+			msg = "로그인 되었습니다.";
+			if (mode != null && !(mode.trim().equals(""))){
+				url = mode;	
+			}else{
+		 		url = request.getContextPath()+"/index.jsp";
+			}	
+		 	break;
+		case LoginOk.NOT_ID :
+			msg = "없는 아이디 입니다. 다시 로그인 해 주세요";
+		 	url = "login.jsp";
+		 	break;
+		case LoginOk.NOT_PWD :
+			msg = "비밀번호가 틀렸습니다. 다시 로그인 해 주세요";
+		 	url = "login.jsp";
+		 	break;
+		case LoginOk.ERROR :
+			msg = "DB서버 오류 발생!! 관리자에게 문의해 주세요";
+		 	url = "login.jsp";
+		 	break;
+		}
+		
+%>
+<script type="text/javascript">
+	alert("<%=msg%>")
+	location.href="<%=url%>"
+</script>
+
+
+
+
+
+
+
+
+
+
+

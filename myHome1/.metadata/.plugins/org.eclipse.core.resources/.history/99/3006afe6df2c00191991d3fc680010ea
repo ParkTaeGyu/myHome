@@ -1,0 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!-- content.jsp -->
+<%
+		String num = request.getParameter("num");
+		if (num == null || num.trim().equals("")){
+			response.sendRedirect("list.jsp");
+			return;
+		}
+		
+		
+%>

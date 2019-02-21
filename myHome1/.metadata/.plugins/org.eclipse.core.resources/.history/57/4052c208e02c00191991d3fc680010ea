@@ -1,0 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR" import="my.board.*"%>
+<!-- content.jsp -->
+<jsp:useBean id="dao" class="my.board.BoardDataBean" />
+<%
+		String num = request.getParameter("num");
+		if (num == null || num.trim().equals("")){
+			response.sendRedirect("list.jsp");
+			return;
+		}
+		
+		BoardDBBean dto = dao.getBoard(num);
+%>

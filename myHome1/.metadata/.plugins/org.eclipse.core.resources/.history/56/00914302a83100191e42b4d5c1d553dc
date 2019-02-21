@@ -1,0 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR" 
+    import="com.oreilly.servlet.*, java.io.*"%>
+<%
+		//request.setCharacterEncoding("EUC-KR");
+		//String name = request.getParameter("name");
+		//String filename = request.getParameter("filename");
+		MultipartRequest mr = null;
+		String upPath = 
+				config.getServletContext().getRealPath("/test3");
+		int len = 10*1024*1024;
+		try{
+			//mr = new MultipartRequest(request, "위치", 크기, "글꼴");
+			mr = new MultipartRequest(request, upPath, len,  )
+		}catch(IOException e){
+			
+		}
+%>

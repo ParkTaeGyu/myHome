@@ -1,0 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!-- writeForm.jsp -->
+<%@ include file="../top.jsp"%>
+±Û¾²±â
+<%@ include file="../bottom.jsp"%>

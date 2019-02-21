@@ -1,0 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!-- deletePro.jsp -->
+<jsp:useBean id="dao" class="my.board.BoardDataBean" />
+<%
+		String num = request.getParameter("num");
+		String passwd = request.getParameter("passwd");
+		if (num == null || num.trim().equals("")){
+			response.sendRedirect("list.jsp");
+			return;
+		}
+		
+		int res = dao.deleteBoard(num, passwd);
+%>

@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!-- writeForm.jsp -->
+<%@ include file="../top.jsp"%>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<div align="center">
+	<table border="1" width="60%">
+		<tr bgcolor="yellow">
+			<th colspan="2">글 쓰 기</th>
+		</tr>
+		<tr>
+			<th bgcolor="yellow" width="20%">이름</th>
+			<td><input type="text" name="writer" class="box">
+		</tr>
+		<tr>
+			<th bgcolor="yellow" width="20%">제목</th>
+			<td><input type="text" name="subject" class="box">
+		</tr>
+	</table>
+</div>
+<%@ include file="../bottom.jsp"%>
